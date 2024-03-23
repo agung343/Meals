@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Lato:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+@layer base {
+  body {
+    margin: 0;
+    font-family: "Raleway", "Lato" sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(#29251c, #2c2306);
+    color: #d9e2f1;
+    min-height: 100vh;
+  }
+
+  h1 {
+    @apply font-['Lato'] font-bold tracking-[0.2rem] text-[2rem] m-0 text-jingga-primary uppercase;
+  }
+}
+
+@layer components {
+  .text-button {
+    @apply cursor-pointer bg-transparent border-0 text-jingga-primary hover:text-jingga-secondary active:text-jingga-secondary;
+  }
+
+  .button {
+    @apply cursor-pointer bg-jingga-secondary border-2 border-solid border-jingga-primary text-price py-2 px-6 rounded-md hover:bg-jingga-secondary hover:border-jingga-secondary active:bg-jingga-secondary active:border-jingga-secondary;
+    font: inherit;
+  }
+
+  .modal-actions {
+    @apply flex justify-end gap-4
+  }
+
+  .modal {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    animation: fade-slide-up 0.3s ease-out forwards;
+  }
+
+  @keyframes fade-slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(4rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
